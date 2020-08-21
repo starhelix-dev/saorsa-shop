@@ -1,0 +1,7 @@
+.flickity-viewport {
+  height: 260px !important;
+}
+
+.snipcart-modal__container {
+  z-index: 9999 !important;
+}

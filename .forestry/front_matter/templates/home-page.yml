@@ -1,0 +1,49 @@
+---
+label: Home Page
+hide_body: false
+fields:
+- name: feature_1
+  type: field_group
+  config: {}
+  fields:
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: image
+  - name: text
+    type: text
+    config:
+      required: false
+    label: Text
+  label: Feature 1
+- name: feature_2
+  type: field_group
+  config: {}
+  fields:
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: image
+  - name: text
+    type: text
+    config:
+      required: false
+    label: text
+  label: Feature 2
+- name: feature_3
+  type: field_group
+  config: {}
+  fields:
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: image
+  - name: text
+    type: text
+    config:
+      required: false
+    label: text
+  label: Feature 3

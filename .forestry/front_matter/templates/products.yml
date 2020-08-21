@@ -1,0 +1,102 @@
+---
+label: Products
+hide_body: true
+fields:
+- name: template
+  type: text
+  label: Template
+  hidden: true
+  default: product
+- name: title
+  type: text
+  label: Title
+  description: ''
+  config:
+    required: true
+- name: category
+  type: select
+  label: Category
+  description: Select a category for this product
+  hidden: false
+  config:
+    source:
+      type: custom
+    options:
+    - Bracelets
+    - Necklaces
+    - Rings
+    - Earrings
+    - Chokers
+    - Bracelet Charms
+    - Anklets
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Description
+  description: Enter a description for this product
+- name: price
+  type: number
+  label: Price
+  description: Enter a price for this product
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+    required: true
+- name: quantity
+  type: number
+  label: Quantity
+  description: Enter a quantity for this product
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+    required: true
+- name: materials
+  type: tag_list
+  default: []
+  label: Materials
+  description: Enter materials this product is made of
+- name: featured_image
+  type: file
+  config:
+    maxSize: 64
+  label: Featured Image
+  description: The featured image for this product
+- name: gallery
+  type: image_gallery
+  config: {}
+  label: Gallery
+  description: The images for this product
+- name: variation_type
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Ring Size
+    - Bracelet Length
+    - Necklace Length
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Variation Type
+- name: variation_value
+  type: tag_list
+  default: []
+  label: Variation Value
+pages:
+- src/content/products/black-moonstone-ring-stainless-steel-ring-hypoallergenic-wire-wrapped-ring-gift-for-her-birthday-gift-bridesmaid-gifts-new-beginnings.md
+- src/content/products/black-onyx-ring-natural-stone-ring-adjustable-ring-oval-ring-gift-for-her-birthday-gift-bridesmaid-gift-protection-stone-black-ring.md
+- src/content/products/celtic-knot-earrings-hematite-black-diamond-dangle-drop-earrings-scottish-gifts-goddess-earrings-celtic-jewelry-gemstone-earrings.md

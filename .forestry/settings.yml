@@ -1,0 +1,35 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: "/static/admin"
+webhook_url: 
+sections:
+- type: document
+  path: src/content/index.md
+  label: Home
+- type: directory
+  path: src/content/products
+  label: Products
+  create: documents
+  match: "**/*"
+  templates:
+  - products
+- type: directory
+  path: src/content/categories
+  label: Categories
+  create: documents
+  match: "**/*"
+  templates:
+  - categories
+upload_dir: image/upload
+public_path: ''
+front_matter_path: ''
+use_front_matter_path: 
+file_template: ":filename:"
+build:
+  preview_output_directory: public
+  install_dependencies_command: npm install
+  preview_docker_image: forestryio/node:12
+  mount_path: "/srv"
+  working_dir: "/srv"
+  instant_preview_command: npm run forestry:preview
