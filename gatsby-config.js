@@ -1,5 +1,5 @@
 const path = require("path");
-const REPO_ABSOLUTE_PATH = path.join(process.cwd(), "../..");
+const REPO_ABSOLUTE_PATH = path.join(process.cwd(), "..");
 console.log(REPO_ABSOLUTE_PATH);
 /**
  * Configure your Gatsby site with this file.
@@ -44,23 +44,43 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/images`,
+        name: `uploads`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/public/uploads`,
+        name: `content`,
+        path: `${__dirname}/content`,
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        // CommonMark mode (default: true)
-        commonmark: true,
-        // Footnotes mode (default: true)
-        footnotes: true,
-        // Pedantic mode (default: true)
-        pedantic: true,
-        // GitHub Flavored Markdown mode (default: true)
-        gfm: true,
+        plugins: [
+          {
+            resolve: "gatsby-remark-relative-images",
+            options: {
+              name: "uploads",
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 880,
+              withWebp: true,
+            },
+          },
+          {
+            resolve: "gatsby-remark-copy-linked-files",
+            options: {
+              destinationDir: "static",
+            },
+          },
+        ],
       },
     },
     `gatsby-transformer-sharp`,
